@@ -7,7 +7,7 @@ import time
 # at next window, counter resets to 0
 
 class FixedWindowCounter:
-    def __init__(self, window_size: int, max_requests_per_window: int, fixed_window_counters):
+    def __init__(self, window_size: int, max_requests_per_window: int, fixed_window_counters: Dict[str, Dict[int, int]]):
         self.window_size = window_size # in seconds
         self.max_requests_per_window = max_requests_per_window
         self.counters = fixed_window_counters
