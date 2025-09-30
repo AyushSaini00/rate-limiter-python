@@ -1,5 +1,4 @@
 import time
-from typing import Dict
 
 # TokenBucket will create a bucket with max_capacity per user (eg: 10 tokens)
 # tokens are refilled at a fixed rate (eg: 1 token per second)
