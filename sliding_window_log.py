@@ -7,10 +7,10 @@ from typing import Dict, List
 # if the request exceeds the max threshold it is discarded
 
 class SlidingWindowLog:
-    def __init__(self, window_size: int, max_requests_per_window: int, sliding_window_logs: Dict[str, List[float]]):
+    def __init__(self, window_size: int, max_requests_per_window: int):
         self.window_size = window_size
         self.max_requests_per_window = max_requests_per_window
-        self.logs = sliding_window_logs
+        self.logs: Dict[str, List[float]] = {} # { client_id: [ timestamp_of_requests ] }
         
     def allow_request(self, client_id: str):
         now = time.time()
